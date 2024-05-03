@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/adp/static/css/main.404b798e.css",
-    "main.js": "/adp/static/js/main.16fbd88c.js",
+    "main.js": "/adp/static/js/main.6b04677f.js",
     "static/js/787.cda612ba.chunk.js": "/adp/static/js/787.cda612ba.chunk.js",
     "index.html": "/adp/index.html",
     "main.404b798e.css.map": "/adp/static/css/main.404b798e.css.map",
-    "main.16fbd88c.js.map": "/adp/static/js/main.16fbd88c.js.map",
+    "main.6b04677f.js.map": "/adp/static/js/main.6b04677f.js.map",
     "787.cda612ba.chunk.js.map": "/adp/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.404b798e.css",
-    "static/js/main.16fbd88c.js"
+    "static/js/main.6b04677f.js"
   ]
 }
