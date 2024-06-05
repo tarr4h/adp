@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/adp/static/css/main.275b4c9a.css",
-    "main.js": "/adp/static/js/main.b34afd21.js",
+    "main.js": "/adp/static/js/main.046d7955.js",
     "static/js/206.8ac086ca.chunk.js": "/adp/static/js/206.8ac086ca.chunk.js",
     "static/media/favico_adp.jpeg": "/adp/static/media/favico_adp.56d2e5abcf2872dcbe4d.jpeg",
     "index.html": "/adp/index.html"
   },
   "entrypoints": [
     "static/css/main.275b4c9a.css",
-    "static/js/main.b34afd21.js"
+    "static/js/main.046d7955.js"
   ]
 }
