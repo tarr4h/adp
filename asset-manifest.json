@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/adp/static/css/main.f0f8bd6b.css",
+    "main.css": "/adp/static/css/main.3de6c9ac.css",
     "main.js": "/adp/static/js/main.f1ea1750.js",
     "static/js/206.8ac086ca.chunk.js": "/adp/static/js/206.8ac086ca.chunk.js",
     "static/media/beer.png": "/adp/static/media/beer.da7399dde1edecf512a9.png",
@@ -18,7 +18,7 @@
     "index.html": "/adp/index.html"
   },
   "entrypoints": [
-    "static/css/main.f0f8bd6b.css",
+    "static/css/main.3de6c9ac.css",
     "static/js/main.f1ea1750.js"
   ]
 }
