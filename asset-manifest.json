@@ -1,13 +1,24 @@
 {
   "files": {
-    "main.css": "/adp/static/css/main.275b4c9a.css",
-    "main.js": "/adp/static/js/main.046d7955.js",
+    "main.css": "/adp/static/css/main.f0f8bd6b.css",
+    "main.js": "/adp/static/js/main.ff510090.js",
     "static/js/206.8ac086ca.chunk.js": "/adp/static/js/206.8ac086ca.chunk.js",
+    "static/media/beer.png": "/adp/static/media/beer.da7399dde1edecf512a9.png",
+    "static/media/dog_cup.png": "/adp/static/media/dog_cup.5a6e399b7ccaca260bf3.png",
+    "static/media/adp_logo.png": "/adp/static/media/adp_logo.e575c035c1f4fbb7919a.png",
+    "static/media/dog_cafe.png": "/adp/static/media/dog_cafe.c09f7f465b6cea738c57.png",
+    "static/media/dog_food.png": "/adp/static/media/dog_food.cb4d07282dc272a1f7ec.png",
+    "static/media/bar.png": "/adp/static/media/bar.b54584d28affd27b87c9.png",
+    "static/media/dog_accomodation.png": "/adp/static/media/dog_accomodation.eb9f24ec6e58c9d48d05.png",
+    "static/media/dog_recover.png": "/adp/static/media/dog_recover.d6be61bfa80e3bfd78f8.png",
+    "static/media/beer_pub.png": "/adp/static/media/beer_pub.08b9abe3803864674a0c.png",
     "static/media/favico_adp.jpeg": "/adp/static/media/favico_adp.56d2e5abcf2872dcbe4d.jpeg",
+    "static/media/alcoholic-drink.png": "/adp/static/media/alcoholic-drink.28e134fe6b177824f5f2.png",
+    "static/media/coffee_red.png": "/adp/static/media/coffee_red.b2c347dcfdce87a84500.png",
     "index.html": "/adp/index.html"
   },
   "entrypoints": [
-    "static/css/main.275b4c9a.css",
-    "static/js/main.046d7955.js"
+    "static/css/main.f0f8bd6b.css",
+    "static/js/main.ff510090.js"
   ]
 }
