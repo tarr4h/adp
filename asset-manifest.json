@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/adp/static/css/main.4f9ec77c.css",
-    "main.js": "/adp/static/js/main.4de6655e.js",
+    "main.css": "/adp/static/css/main.cb0cde81.css",
+    "main.js": "/adp/static/js/main.8528f760.js",
     "static/js/206.8ac086ca.chunk.js": "/adp/static/js/206.8ac086ca.chunk.js",
     "static/media/beer.png": "/adp/static/media/beer.da7399dde1edecf512a9.png",
     "static/media/dog_cup.png": "/adp/static/media/dog_cup.5a6e399b7ccaca260bf3.png",
@@ -18,7 +18,7 @@
     "index.html": "/adp/index.html"
   },
   "entrypoints": [
-    "static/css/main.4f9ec77c.css",
-    "static/js/main.4de6655e.js"
+    "static/css/main.cb0cde81.css",
+    "static/js/main.8528f760.js"
   ]
 }
