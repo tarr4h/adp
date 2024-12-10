@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/adp/static/css/main.de22490d.css",
+    "main.js": "/adp/static/js/main.35acd8bb.js",
+    "static/js/206.8ac086ca.chunk.js": "/adp/static/js/206.8ac086ca.chunk.js",
+    "static/media/app_view_guide_1_safari.jpg": "/adp/static/media/app_view_guide_1_safari.2be7c1e4ff31cfc05bec.jpg",
+    "static/media/app_view_guide_1_kakao.jpg": "/adp/static/media/app_view_guide_1_kakao.6030e70e86c8f8ea7662.jpg",
+    "static/media/app_view_guide_1_chrome.jpg": "/adp/static/media/app_view_guide_1_chrome.aec8aea754b495e80da3.jpg",
+    "static/media/app_view_guide_2.jpg": "/adp/static/media/app_view_guide_2.18488705a5dd2896fcee.jpg",
+    "static/media/app_view_guide_3.jpg": "/adp/static/media/app_view_guide_3.58e248ea83c487c452c7.jpg",
+    "static/media/app_view_guide_4.jpg": "/adp/static/media/app_view_guide_4.409fdb0f4fa4bf45104c.jpg",
+    "static/media/beer.png": "/adp/static/media/beer.da7399dde1edecf512a9.png",
+    "static/media/dog_cup.png": "/adp/static/media/dog_cup.5a6e399b7ccaca260bf3.png",
+    "static/media/adp_logo.png": "/adp/static/media/adp_logo.e575c035c1f4fbb7919a.png",
+    "static/media/dog_cafe.png": "/adp/static/media/dog_cafe.c09f7f465b6cea738c57.png",
+    "static/media/dog_food.png": "/adp/static/media/dog_food.cb4d07282dc272a1f7ec.png",
+    "static/media/bar.png": "/adp/static/media/bar.b54584d28affd27b87c9.png",
+    "static/media/dog_accomodation.png": "/adp/static/media/dog_accomodation.eb9f24ec6e58c9d48d05.png",
+    "static/media/dog_recover.png": "/adp/static/media/dog_recover.d6be61bfa80e3bfd78f8.png",
+    "static/media/beer_pub.png": "/adp/static/media/beer_pub.08b9abe3803864674a0c.png",
+    "static/media/favico_adp.jpeg": "/adp/static/media/favico_adp.56d2e5abcf2872dcbe4d.jpeg",
+    "static/media/alcoholic-drink.png": "/adp/static/media/alcoholic-drink.28e134fe6b177824f5f2.png",
+    "static/media/coffee_red.png": "/adp/static/media/coffee_red.b2c347dcfdce87a84500.png",
+    "index.html": "/adp/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.de22490d.css",
+    "static/js/main.35acd8bb.js"
+  ]
+}
