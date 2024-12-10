@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.t_web.program.comn.dao.ComnDao">
+
+    <insert id="insertMapData">
+        INSERT INTO MAP_DATA
+        (ID, NAME, PX, PY, ADDRESS, MCID, MCID_NAME, AVAILABLE)
+        VALUES(
+               #{bookmarkId}
+            ,   #{name}
+            ,   #{px}
+            ,   #{py}
+            ,   #{address}
+            ,   #{mcid}
+            ,   #{mcidName}
+            ,   #{available}
+        )
+    </insert>
+
+    <select id="selectMapData" resultType="com.demo.t_web.program.comn.model.MapData">
+        select  *
+        from    map_data
+        <where>
+            <if test="id != null and id != ''">
+                id = #{id}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="addr1 != null and addr1 != ''">
+                and addr_1 = #{addr1}
+            </if>
+            <if test="addr2 != null and addr2 != ''">
+                and addr_2 = #{addr2}
+            </if>
+            <if test="px != null and px != ''">
+                and px = #{px}
+            </if>
+            <if test="py != null and py != ''">
+                and py = #{py}
+            </if>
+        </where>
+
+    </select>
+
+    <select id="selectMapDataCount" resultType="int">
+        SELECT  COUNT(*)
+        FROM    MAP_DATA
+        WHERE   ID = #{bookmarkId}
+    </select>
+
+    <select id="selectMapDataList" resultType="com.demo.t_web.program.comn.model.MapData">
+        select  a.*
+        from    map_data a left join vanish_map_data b on a.id = b.id
+        where   (b.vanish_yn is null or b.vanish_yn = 'n')
+            and cast(px as double precision) between cast(#{minLng} as double precision) and cast(#{maxLng} as double precision)
+            and cast(py as double precision) between cast(#{minLat} as double precision) and cast(#{maxLat} as double precision)
+            <if test="mcid != null and mcid != ''">
+                and mcid = #{mcid}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="addr1 != null and addr1 != ''">
+                and addr_1 = #{addr1}
+            </if>
+            <if test="addr2 != null and addr2 != ''">
+                and addr_2 = #{addr2}
+            </if>
+            <if test="placeName != null and placeName instanceof java.util.ArrayList">
+                <foreach collection="placeName" item="item" separator="or" open="and (" close=")">
+                    name like concat('%', trim(#{item}), '%')
+                </foreach>
+            </if>
+    </select>
+
+    <select id="selectMcidList" resultType="Tmap">
+        select  a.mcid
+            ,   a.mcid_name
+        from    map_data a left join vanish_map_data b on a.id = b.id
+        where   (b.vanish_yn is null or b.vanish_yn = 'n')
+            and cast(px as double precision) between cast(#{minLng} as double precision) and cast(#{maxLng} as double precision)
+            and cast(py as double precision) between cast(#{minLat} as double precision) and cast(#{maxLat} as double precision)
+        group by mcid, mcid_name
+        order by mcid_name desc
+    </select>
+
+    <select id="getRegion1" resultType="Tmap">
+        SELECT  ADDR_1
+        FROM    MAP_DATA
+        WHERE   ADDR_1 != ''
+        GROUP BY ADDR_1
+        ORDER BY ADDR_1
+    </select>
+
+    <select id="getRegion2" resultType="Tmap">
+        SELECT  ADDR_2
+        FROM    MAP_DATA
+        WHERE   ADDR_2 != ''
+            AND ADDR_1 = #{addr1}
+        GROUP BY ADDR_2
+        ORDER BY ADDR_2
+    </select>
+
+    <select id="getRegionMapData" resultType="com.demo.t_web.program.comn.model.MapData">
+        SELECT  *
+        FROM    MAP_DATA
+        <where>
+            <if test="addr1 != null and addr1 != ''">
+                ADDR_1 = #{addr1}
+            </if>
+            <if test="addr2 != null and addr2 != ''">
+                AND ADDR_2 = #{addr2}
+            </if>
+        </where>
+    </select>
+
+    <select id="checkVisit" resultType="int">
+        select  count(*)
+        from    visit_log
+        where   IP = #{ip}
+            and visit_dt = to_char(now(), 'YYYY-MM-DD')
+    </select>
+
+    <insert id="insertVisitLog">
+        insert into visit_log
+        (ip, visit_dt, visit_count, user_agent)
+        values(
+                #{ip}
+            ,   to_char(now(), 'YYYY-MM-DD')
+            ,   1
+            ,   #{userAgent}
+        )
+    </insert>
+
+    <update id="updateVisitLog">
+        UPDATE VISIT_LOG
+        SET     VISIT_COUNT = VISIT_COUNT + 1
+        WHERE   IP = #{ip}
+            AND VISIT_DT = TO_CHAR(NOW(), 'YYYY-MM-DD')
+    </update>
+
+    <select id="checkVanish" resultType="int">
+        SELECT  COUNT(*)
+        FROM    VANISH_MAP_DATA
+        WHERE   ID = #{id}
+    </select>
+
+    <insert id="insertVanish">
+        INSERT INTO VANISH_MAP_DATA
+        (id, request_cnt, init_dt, vanish_yn)
+        VALUES (
+                #{id}
+            ,   1
+            ,   NOW()
+            ,   'n'
+        )
+    </insert>
+
+    <update id="updateVanish">
+        update  vanish_map_data
+        set     request_cnt = request_cnt + 1
+        where   id = #{id}
+    </update>
+
+    <insert id="insertLocationChange">
+        insert into location_change_data
+        (id, prev_lat, prev_lng, chng_lat, chng_lng, change_at, prev_addr, chng_addr)
+        values(
+                #{id}
+            ,   #{prevLat}
+            ,   #{prevLng}
+            ,   #{chngLat}
+            ,   #{chngLng}
+            ,   now()
+            ,   #{prevAddr}
+            ,   #{chngAddr}
+        )
+    </insert>
+
+    <update id="updateMapDataLocation">
+        update  map_data
+        set     py = #{py}
+            ,   px = #{px}
+            ,   addr_1 = #{addr1}
+            ,   addr_2 = #{addr2}
+            ,   addr_3 = #{addr3}
+            ,   updated_at = now()
+        where   id = #{id}
+    </update>
+
+    <select id="selectRelatedCategories" resultType="com.demo.t_web.program.comn.model.ExcludeCategory">
+        select  *
+        from    exclude_categories
+        where   related_mcid = #{mcid}
+    </select>
+
+    <select id="selectMapDataExist" resultType="com.demo.t_web.program.comn.model.MapData">
+        select  *
+        from    map_data
+        <where>
+            <if test="id != null and id != ''">
+                id = #{id}
+            </if>
+            <if test="name != null and name != ''">
+                and name like '%' || #{name} || '%'
+            </if>
+            <if test="nameList != null">
+                and
+                    <foreach collection="nameList" item="item" open="(" close=")" separator="or">
+                        name like '%' || #{item} || '%'
+                    </foreach>
+            </if>
+            <if test="px != null and px != ''">
+                and px = #{px}
+            </if>
+            <if test="py != null and py != ''">
+                and py = #{py}
+            </if>
+        </where>
+    </select>
+
+    <insert id="insertRequestData">
+        insert into request_data
+        (name, address, road_address, px, py, category, request_dt, accepted)
+        values(
+               #{name}
+            ,   #{address}
+            ,   #{roadAddress}
+            ,   #{px}
+            ,   #{py}
+            ,   #{category}
+            ,   now()
+            ,   false
+        )
+    </insert>
+
+    <select id="checkIsDuplicateInserted" resultType="int">
+        select  count(*)
+        from    duplicate_location_data
+        where   related_id = #{relatedId}
+    </select>
+
+    <insert id="insertDuplicateLocationData">
+        insert into duplicate_location_data
+        (id, name, addr1, addr2, related_id, reg_dt)
+        values(
+               #{id}
+            ,   #{name}
+            ,   #{addr1}
+            ,   #{addr2}
+            ,   #{relatedId}
+            ,   now()
+        )
+    </insert>
+
+    <insert id="insertExceptionHst">
+        insert into exception_hst
+        (uri, exception, msg, params, reg_dt)
+        values(
+               #{uri}
+            ,   #{exception}
+            ,   #{msg}
+            ,   #{params}
+            ,   now()
+        )
+    </insert>
+</mapper>
